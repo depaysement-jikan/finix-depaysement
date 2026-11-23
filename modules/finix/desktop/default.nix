@@ -3,15 +3,15 @@
   config,
   ...
 }: let
-  cfg = config.nixos-generic.desktop;
+  cfg = config.finix-generic.desktop;
 in {
   imports = [./hyprland ./home-manager ./audio ./tuigreet ./upower];
-  options.nixos-generic.desktop = {
+  options.finix-generic.desktop = {
     enable = lib.mkEnableOption "Desktop environment";
   };
 
   config = lib.mkIf cfg.enable {
-    nixos-generic.desktop = {
+    finix-generic.desktop = {
       tuigreet.enable = lib.mkDefault true;
       hyprland.enable = lib.mkDefault true;
       homeManager.enable = lib.mkDefault true;

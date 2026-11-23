@@ -19,7 +19,7 @@
       settings = {
         shell = {
           polkit_agent = true;
-          avatar_path = "/home/${settings.user}/.nixos-dotfiles/modules/home-manager/pfp/image.png";
+          avatar_path = "/home/${settings.user}/.finix-dotfiles/modules/home-manager/pfp/image.png";
         };
         wallpaper = {
           enabled = false;
@@ -114,7 +114,7 @@
             capsule_fill = "surface_variant";
           };
           control-center = {
-            custom_image = "/home/${settings.user}/.nixos-dotfiles/modules/home-manager/pfp/image.png";
+            custom_image = "/home/${settings.user}/.finix-dotfiles/modules/home-manager/pfp/image.png";
           };
           clipboard.capsule_fill = "surface_variant";
           screenshot.capsule_fill = "surface_variant";

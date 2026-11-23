@@ -3,11 +3,11 @@
   lib,
   ...
 }: {
-  options.nixos-generic.desktop.upower = {
+  options.finix-generic.desktop.upower = {
     enable = lib.mkEnableOption "Upower module";
   };
 
-  config = lib.mkIf config.nixos-generic.desktop.upower.enable {
+  config = lib.mkIf config.finix-generic.desktop.upower.enable {
     services.upower.enable = true;
   };
 }

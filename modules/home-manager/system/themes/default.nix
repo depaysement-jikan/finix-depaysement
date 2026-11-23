@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  imports = [./catppuccin ./stylix];
+  imports = [./catppuccin ./tylix];
 
   options = {themes.enable = lib.mkEnableOption "Enable themes module";};
   config = lib.mkIf config.themes.enable {
