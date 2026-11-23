@@ -18,9 +18,7 @@ in {
           };
           platform = lib.mkOption {
             type = types.enum [
-              "non-nixos"
-              "nixos"
-              "rpi-nixos"
+              "finix"
             ];
           };
           users = lib.mkOption {

@@ -51,10 +51,10 @@
     };
 
     mkHost = hostName: attrs: system: let
-      finixConfigurations = finix.lib.finixSystem;
+      finixSystem = finix.lib.finixSystem;
       pkgs = nixpkgs.legacyPackages.${system};
     in
-      finixConfigurations {
+      finixSystem {
         inherit (pkgs) lib;
         specialArgs = {
           inherit inputs outputs;
@@ -65,6 +65,7 @@
         modules =
           [
             ./modules/finix
+            # TODO: Future project, enabling homelab
             # ./modules/homelab
             ./hosts/${hostName}
             ./hosts/${hostName}/config/homelab-config
@@ -104,14 +105,14 @@
     formatter =
       forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     overlays = import ./overlays {inherit inputs;};
-    nixosModules = {
-      default = import ./modules/nixos;
+    finixModules = {
+      default = import ./modules/finix;
     };
     homeManagerModules = import ./modules/home-manager;
 
-    nixosConfigurations =
+    finixConfigurations =
       config.hosts
-      |> lib.filterAttrs (_: attrs: attrs.platform == "nixos")
+      |> lib.filterAttrs (_: attrs: attrs.platform == "finix")
       |> lib.mapAttrs (hostName: attrs: mkHost hostName attrs);
 
     homeConfigurations =
