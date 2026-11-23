@@ -4,11 +4,11 @@
   lib,
   ...
 }: {
-  options.nixos-generic.desktop.tuigreet = {
+  options.finix-generic.desktop.tuigreet = {
     enable = lib.mkEnableOption "TUIGreet Display Manager";
   };
 
-  config = lib.mkIf config.nixos-generic.desktop.tuigreet.enable {
+  config = lib.mkIf config.finix-generic.desktop.tuigreet.enable {
     services.greetd = {
       enable = true;
       settings = {

@@ -38,8 +38,8 @@
         init = {defaultBranch = "develop";};
         push = {autoSetupRemote = true;};
         fetch = {prune = true;};
-        maintenance.repo = "${config.home.homeDirectory}/.nixos-dotfiles";
-        safe.directory = "${config.home.homeDirectory}/.nixos-dotfiles";
+        maintenance.repo = "${config.home.homeDirectory}/.finix-dotfiles";
+        safe.directory = "${config.home.homeDirectory}/.finix-dotfiles";
       };
       includes = [{path = "user.gitconfig";}];
     };

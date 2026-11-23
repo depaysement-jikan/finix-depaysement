@@ -4,11 +4,11 @@
   lib,
   ...
 }: {
-  options.nixos-generic.desktop.homeManager = {
+  options.finix-generic.desktop.homeManager = {
     enable = lib.mkEnableOption "Home Manager";
   };
 
-  config = lib.mkIf config.nixos-generic.desktop.homeManager.enable {
+  config = lib.mkIf config.finix-generic.desktop.homeManager.enable {
     environment.systemPackages = [
       pkgs.home-manager
     ];

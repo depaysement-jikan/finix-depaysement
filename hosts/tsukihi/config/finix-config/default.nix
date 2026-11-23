@@ -1,6 +1,6 @@
 {...}: {
   config = {
-    nixos-generic = {
+    finix-generic = {
       desktop = {
         enable = true;
         tuigreet.enable = false;

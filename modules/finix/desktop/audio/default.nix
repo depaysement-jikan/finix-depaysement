@@ -4,8 +4,8 @@
   pkgs,
   ...
 }: {
-  options.nixos-generic.desktop.audio.enable = lib.mkEnableOption "Audio settings";
-  config = lib.mkIf config.nixos-generic.desktop.audio.enable {
+  options.finix-generic.desktop.audio.enable = lib.mkEnableOption "Audio settings";
+  config = lib.mkIf config.finix-generic.desktop.audio.enable {
     services = {
       pulseaudio.enable = false;
       pipewire = {
