@@ -1,0 +1,13 @@
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  options = {
+    typescript.enable = lib.mkEnableOption "Enable typescript module";
+  };
+  config = lib.mkIf config.homeManager.apps.development.languages.typescript.enable {
+    home.packages = with pkgs; [typescript-language-server typescript graphql-language-service-cli tailwindcss-language-server vscode-langservers-extracted eslint_d];
+  };
+}
